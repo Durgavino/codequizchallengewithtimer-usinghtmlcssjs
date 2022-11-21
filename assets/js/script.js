@@ -195,4 +195,14 @@ document.getElementById('textfield').value='';
   
      }
 
+     var highscore=document.getElementById('highscore');
+
+     function displayhighscore() 
+     {
+        var resultscore=JSON.parse(window.localStorage.getItem("text"));
+        console.log(resultscore); 
+    }
+
+     highscore.onclick=displayhighscore;
+
     
