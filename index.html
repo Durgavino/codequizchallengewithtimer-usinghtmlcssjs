@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="top">
+       
+        <a href="highscore.html" class="highscore" id="highscore">View highscore</a>
+        <button class="start" id="start" onclick="displayscreen()" style="margin: 5px;">Start</button>
+    </header>
+
+    <div hidden class="questionscreen" id="questionscreen">
+        <div class="title">Code Quiz Challenge</div>
+
+        <div class="scorebox">Score:<span id="score"></span></div>
+
+        <div class="timerbox" id="timerbox">Time Left:10 </div>
+
+        <p class="question" id="question">
+            <!---question--->
+        </p>
+
+        <div class="optionscreen" id="choices" name="choices" >
+            <!--choices-->
+        </div>
+
+       
+<div id="result"> </div>
+<a href="./Score.html">
+            <button class="finish" id="Finsh" >Finish</button></a>
+        </div>
+    
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
