@@ -1,7 +1,7 @@
 
 var nextbtn = document.getElementById("next");
 var result = document.getElementById("result");
-var score = document.getElementById("score");
+var fscore = document.getElementById("score");
 var finalscore = document.getElementById("finalscore");
 
 
@@ -69,7 +69,7 @@ var questionsarr = [
 ];
 
 
-var score = 0;
+var fscore = 0;
 var timeleft = 25;
 
 var timerinterval;
@@ -113,8 +113,8 @@ function displayquestion() {
     }
     choices.addEventListener("click", function (event) {
         if (event.target.textContent == questionsarr[questionindex].answer) {
-            score = score + 10;
-            document.getElementById("score").innerHTML = score;
+            fscore = fscore + 10;
+            document.getElementById("score").innerHTML = fscore;
             result.innerHTML = "Correct Answer";
         }
         else {
@@ -125,13 +125,14 @@ function displayquestion() {
         if (questionindex < 4) {
             questionindex++;
             displayquestion();
-            return score;
+            return fscore;
+            //console.log(fscore);
         }
-
+        
     });
 }
 
-//document.getElementById("finalscore").innerHTML= "Your Score is :" + finalscore;
+// document.getElementById("finalscore").innerHTML= "Your Score is :" + finalscore;
 
 // finalscore.textContent="Your score is: " + score;
 
@@ -160,12 +161,12 @@ function save() {
 
 function get() {
     var storedvalue = localStorage.getItem('text');
-
+    //  scoredetail.textContent="your Final score is :" + fscore;
     if (storedvalue) {
         document.getElementById('textfield').value = storedvalue;
     }
     document.getElementById('textfield').value = '';
-
+   
 }
 
 var highscore = document.getElementById('highscore');

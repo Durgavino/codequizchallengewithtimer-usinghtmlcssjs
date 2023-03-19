@@ -6,23 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body onload="get()">
-   
-<div class="scorepage" id="scorepage">
+    <div class="scorepage" id="scorepage">
+        <h1>Congrats</h1>
+        <p id="finalscore">Your score is : </p>
+        
+        <label for="textfield">Enter Your Name:</label>
+        <input type="text" id="textfield" placeholder="your name" name="your name">
+        <button id="save" onclick="save()">Submit</button>
+        <p class="userscore" id="userscore"></p>
 
-    <h1>Congrats</h1>
-
-    <p id="finalscore"></p>
-<p id="scoredetail">Your score is : score</p>
-    <label for="textfield">Enter Your Name:</label>
-    <input type="text" id="textfield" placeholder="your name" name="your name">
-
-    <button id="save" onclick="save()">Submit</button>
-
-    <p class="userscore" id="userscore"></p>
-    
-</div>
+    </div>
 
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
