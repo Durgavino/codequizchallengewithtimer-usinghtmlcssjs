@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+
+
+*{
+ 
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+
+}
+
+header{
+    background-color: grey;
+}
+
+
+.top .highscore{
+    margin-top: 50px;
+     font-size: 20px;
+     margin-left: 20px;
+     border-color: black;
+     border-radius: 6px;
+     cursor: pointer;
+     font-weight: bolder;
+     background-color: green;
+ 
+ }
+  .top .start{
+    text-align: end;
+font-size: 20px;
+background-color: crimson;
+padding: 10px;
+margin-block-end: 10px;
+border-radius: 5px;
+
+  }
+  .questionscreen{
+    background-color: black;
+    color: white;
+  }
+  .title{
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+  }
+  .timerbox{
+    text-align: end;
+    font-size: 25px;
+    padding-right: 40px;
+  }
+.scorebox {
+    text-align: left;
+    font-size: 30px;
+    color: crimson;
+  }
+
+  .question{
+    font-size: 25px;
+    color: white;
+    font: bolder;
+       display: inline-flex;
+    text-align: center;
+    margin-left: 45%;
+    margin-bottom:10px
+    padding-bottom:10px;
+  }
+  .optionscreen{
+    font-size: 25px;
+    background-color: black;
+display:grid;
+row-gap: 20px;
+color: purple;
+border-radius: 8px;
+width:50%;
+text-align:center;
+margin-left:30%;
+color:green;
+
+
+
+  }
+  #score{
+    color: white;
+  }
+  .result{
+    padding:40px;
+    color:white;
+    font-size:30px;
+    left:50px;
+    font-size:bolder;
+  }
+
+  .finish{
+    padding:10px;
+    text-align:center;
+  margin-left:50%;
+  width:70px;
+  background-color:crimson;
+  font-size:15px;
+  font-size:bolder;
+}
