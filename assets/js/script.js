@@ -121,18 +121,17 @@ function displayquestion() {
             result.innerHTML = "InCorrect Answer";
            
         }
-
         if (questionindex < 4) {
             questionindex++;
             displayquestion();
-            return fscore;
+            //return fscore;
             //console.log(fscore);
         }
         
+
     });
 }
 
-// document.getElementById("finalscore").innerHTML= "Your Score is :" + finalscore;
 
 // finalscore.textContent="Your score is: " + score;
 
@@ -170,7 +169,7 @@ function get() {
 }
 
 var highscore = document.getElementById('highscore');
-console.log(highscore);
+//console.log(highscore);
 
 function displayhighscore(event) {
     var resultscore = JSON.parse(window.localStorage.getItem("text"));
@@ -183,5 +182,12 @@ function displayhighscore(event) {
     }
 
 }
-
-highscore.addEventListener("click", displayhighscore);
+function endquiz(){
+    var finalscore=document.getElementById("finalscore");
+    console.log(fscore);
+    finalscore.textContent=fscore;
+}
+//highscore.addEventListener("click", displayhighscore);
+var finishbtn=document.getElementById('Finish');
+console.log(finishbtn);
+finishbtn.addEventListener('click',endquiz)
