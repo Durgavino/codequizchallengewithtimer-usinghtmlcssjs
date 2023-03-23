@@ -109,11 +109,12 @@ function displayquestion() {
         question.textContent = questionsarr[questionindex].quest;
         var newbtn = document.createElement("button");
         newbtn.textContent = questionsarr[questionindex]["choice" + i];
-        choices.appendChild(newbtn);
-    }
-    choices.addEventListener("click", function (event) {
+       
+    
+    newbtn.addEventListener("click", function (event) {
         if (event.target.textContent == questionsarr[questionindex].answer) {
             fscore = fscore + 10;
+            console.log(fscore);
             document.getElementById("score").innerHTML = fscore;
             result.innerHTML = "Correct Answer";
         }
@@ -121,15 +122,18 @@ function displayquestion() {
             result.innerHTML = "InCorrect Answer";
            
         }
+        console.log(questionindex);
         if (questionindex < 4) {
             questionindex++;
             displayquestion();
             //return fscore;
             //console.log(fscore);
         }
-        
+    
 
     });
+    choices.appendChild(newbtn);
+}
 }
 
 
@@ -145,15 +149,19 @@ function save() {
 
 
     //var namelist=[textfield];
+var highscore=JSON.parse(localStorage.getItem('highscore'))||[]
+highscore.push({
+    name:textfield,
+    score:localStorage.getItem("score")
+})
+localStorage.setItem("highscore",JSON.stringify(highscore));
+    // if (storedvalue) {
+    //     storedvalue = JSON.parse(storedvalue);
 
-
-    if (storedvalue) {
-        storedvalue = JSON.parse(storedvalue);
-
-        storedvalue.push(textfield);
-    } else {
-        storedvalue = [textfield];
-    }
+    //     storedvalue.push(textfield);
+    // } else {
+    //     storedvalue = [textfield];
+    // }
     localStorage.setItem('text', JSON.stringify(storedvalue));
 }
 
@@ -172,20 +180,30 @@ var highscore = document.getElementById('highscore');
 //console.log(highscore);
 
 function displayhighscore(event) {
-    var resultscore = JSON.parse(window.localStorage.getItem("text"));
+    var resultscore = JSON.parse(window.localStorage.getItem("highscore"));
     console.log(resultscore);
-    var olEl = document.getElementById('olist');
+   
+
     for (let i = 0; i < resultscore.length; i++) {
         var liEl = document.createElement("li");
-        liEl.textContent = resultscore[i];
+        liEl.textContent = `${resultscore[i].name}:${resultscore[i].score}`;
         olEl.appendChild(liEl);
     }
 
 }
+var olEl = document.getElementById('olist');
+if(olEl){
+    displayhighscore();
+}
 function endquiz(){
-    var finalscore=document.getElementById("finalscore");
+   
+    localStorage.setItem("score",fscore);
+   
+}
+var finalscore=document.getElementById("finalscore");
+if(finalscore){
     console.log(fscore);
-    finalscore.textContent=fscore;
+    finalscore.innerHTML="score is : " +localStorage.getItem("score");
 }
 //highscore.addEventListener("click", displayhighscore);
 var finishbtn=document.getElementById('Finish');
